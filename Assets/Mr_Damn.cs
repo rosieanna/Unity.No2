@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    [SerializeField] float torqueAmount = 6;
+    [SerializeField] float torqueAmount = 10;
     Rigidbody2D rb2d;
 
     // Start is called before the first frame update
