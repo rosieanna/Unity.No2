@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Crash : MonoBehaviour
 {
-    public static int checkPoint = 0;
-    
+    [SerializeField] float reloadDelay = 0.3f;
 
     void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Ground"))  
         {
-            SceneManager.LoadScene(0);
+            Invoke("reloadScene", reloadDelay);
         } 
     }
 
+    void reloadScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

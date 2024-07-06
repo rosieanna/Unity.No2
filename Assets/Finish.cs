@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
-    // void OnTriggerEnter2D(Collider2D other) 
-    // {
-    //     if (other.tag == "Player") 
-    //     {
-    //         SceneManager.LoadScene(0);
-    //     }
-    // }
+    [SerializeField] float reloadDelay = 1f;
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Player") 
+        {
+            Invoke("reloadScene", reloadDelay);
+        }
+    }
+
+    void reloadScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
